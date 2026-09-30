@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { bikeSchema } from "./validator.js";
-import { Logging } from "./logging.middleware.js";
+import { loggingMiddleware } from "./logging.middleware.js";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ const bikes = [
 
 let nextId = bikes.length + 1;
 
-router.get("/bikes", Logging, (req, res) => {
+router.get("/bikes", loggingMiddleware, (req, res) => {
   const { category } = req.query;
 
   if (!category) {

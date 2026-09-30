@@ -4,7 +4,9 @@
     "target": "es2023",
     "lib": ["ES2023", "DOM"],
     "module": "esnext",
-    "types": ["vite/client"],
+    // Remove explicit vite/client types to avoid "Cannot find type definition file for 'vite/client'"
+    // If you need vite types, install them with: npm i -D vite
+    "types": [],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
 

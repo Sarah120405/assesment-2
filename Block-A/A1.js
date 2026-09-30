@@ -4,6 +4,7 @@
 	(d) Destructure { name, price, ...others } from the first item and log others.
  */
 import { data } from "./data.js";
+console.log(Number("12px"), parseInt("12px"));
 
 const priceFilter = data.filter((bike) => bike.price > 300 && bike.stock > 0);
 console.log("Available bikes priced above 300\n", priceFilter);
