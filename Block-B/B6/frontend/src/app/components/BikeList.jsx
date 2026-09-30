@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function BikeList({ bike = [] }) {
@@ -19,9 +21,11 @@ export default function BikeList({ bike = [] }) {
       <ul className="bike-list">
         {filteredBikes.map((item) => (
           <li key={item.id} className="bike-card">
-            <p className="bike-name">{item.name}</p>
-            <p className="bike-category">{item.category}</p>
-            <p className="bike-price">Rs {item.price}</p>
+            <Link href={`/bike/${item.id}`}>
+              <p className="bike-name">{item.name}</p>
+              <p className="bike-category">{item.category}</p>
+              <p className="bike-price">Rs {item.price}</p>
+            </Link>
           </li>
         ))}
       </ul>
