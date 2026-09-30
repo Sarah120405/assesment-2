@@ -9,3 +9,6 @@
 
 4.  console.log(Number("12px"), parseInt("12px"));
     NaN as it can extrat Number from the string , 12 as parse int will extract the numerical part and convert it into string
+
+git rebase main
+Add bike discount feature
