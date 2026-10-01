@@ -5,3 +5,15 @@ export const data = [
   { id: 4, name: "Kids Bike", category: "Standard", price: 120, stock: 5 },
   { id: 5, name: "Road Racer", category: "Sports", price: 400, stock: 2 },
 ];
+
+export function fakeApi(data, ms, shouldFail = false) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldFail) {
+        reject(new Error("Failed to load data"));
+      } else {
+        resolve(data);
+      }
+    }, ms);
+  });
+}
